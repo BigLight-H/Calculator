@@ -1,0 +1,110 @@
+<div class="panel-body">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-content " style="border: none !important;">
+                <form role="form" class="form-inline form-horizontal" id="floor_bad">
+                    <div class="row col-md-12" style="margin-bottom: 1rem;">
+                        <div class="input-group col-md-4">
+                            <input type="text" class="form-control" placeholder="输入宽度">
+                            <div class="input-group-append">
+                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动 </font></font></button>
+                                <ul class="dropdown-menu float-right" x-placement="bottom-start" style="position: absolute; top: 35px; left: 1256px; will-change: top, left;">
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动</font></font></a></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个动作</font></font></a></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里还有其他</font></font></a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分隔链接</font></font></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-group col-md-4">
+                            <input type="text" class="form-control" placeholder="输入长度">
+                            <div class="input-group-append">
+                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动 </font></font></button>
+                                <ul class="dropdown-menu float-right" x-placement="bottom-start" style="position: absolute; top: 35px; left: 1256px; will-change: top, left;">
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动</font></font></a></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个动作</font></font></a></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里还有其他</font></font></a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分隔链接</font></font></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-group col-md-3">
+                            <label>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>
+                                </font>
+                            </label>
+                            <select class="form-control m-b" name="account">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <a class="btn btn-primary btn-rounded btn-block col-md-5" href="#" style="margin: 0 auto;" onclick="addFloorBad();">
+                <i class="fa fa-info-circle"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;"> 添加表单</font>
+                </font>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addFloorBad() {
+        let str = '<div class="row col-md-12" style="margin-bottom: 1rem;">\n' +
+            '                        <div class="input-group col-md-4">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入宽度">\n' +
+            '                            <div class="input-group-append">\n' +
+            '                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动 </font></font></button>\n' +
+            '                                <ul class="dropdown-menu float-right" x-placement="bottom-start" style="position: absolute; top: 35px; left: 1256px; will-change: top, left;">\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动</font></font></a></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个动作</font></font></a></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里还有其他</font></font></a></li>\n' +
+            '                                    <li class="dropdown-divider"></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分隔链接</font></font></a></li>\n' +
+            '                                </ul>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
+            '                        &nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <div class="input-group col-md-4">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入长度">\n' +
+            '                            <div class="input-group-append">\n' +
+            '                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动 </font></font></button>\n' +
+            '                                <ul class="dropdown-menu float-right" x-placement="bottom-start" style="position: absolute; top: 35px; left: 1256px; will-change: top, left;">\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行动</font></font></a></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个动作</font></font></a></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里还有其他</font></font></a></li>\n' +
+            '                                    <li class="dropdown-divider"></li>\n' +
+            '                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分隔链接</font></font></a></li>\n' +
+            '                                </ul>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
+            '                        &nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <div class="input-group col-md-3">\n' +
+            '                            <label>\n' +
+            '                                <font style="vertical-align: inherit;">\n' +
+            '                                    <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>\n' +
+            '                                </font>\n' +
+            '                            </label>\n' +
+            '                            <select class="form-control m-b" name="account">\n' +
+            '                                <option>option 1</option>\n' +
+            '                                <option>option 2</option>\n' +
+            '                                <option>option 3</option>\n' +
+            '                                <option>option 4</option>\n' +
+            '                            </select>\n' +
+            '                        </div>\n' +
+            '                    </div>';
+        $("#floor_bad").append(str);
+    }
+</script>
