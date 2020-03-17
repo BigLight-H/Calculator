@@ -1,8 +1,12 @@
 package models
 
 type FloorBad struct {
-	Id int
+	Id     int
 	HighCi string
+	HighIn string
+	HighCm string
+	HighMm string
+	Price  string
 }
 
 func (m *FloorBad) TableName() string {

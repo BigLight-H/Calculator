@@ -12,9 +12,8 @@ type IndexController struct {
 //查询地台床
 func (c *IndexController) Get() {
 	floors := [] *models.FloorBad{}
-	c.o.QueryTable( new(models.FloorBad).TableName() ).RelatedSel().All(&floors)
+	c.o.QueryTable( new(models.FloorBad).TableName() ).All(&floors)
 	c.Data["floor"] = &floors
 	c.TplName = "tabs.html"
-
 	spew.Dump(floors)
 }
