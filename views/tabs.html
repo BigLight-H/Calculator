@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="tabs-container">
-                <button class="btn btn-primary " type="button" style="position: absolute;right: 1rem;">
+                <button class="btn btn-primary " type="button" style="position: absolute;right: 1rem;" onclick="calculate_all();">
                     <i class="fa fa-check"></i>
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">&nbsp;提交</font>
@@ -91,7 +91,13 @@
     <!-- Custom and plugin javascript -->
     <script src="/static/js/inspinia.js"></script>
     <script src="/static/js/plugins/pace/pace.min.js"></script>
+    <script>
 
+        function calculate_all() {
+            floorPrice();
+        }
+
+    </script>
 
 
 </body>

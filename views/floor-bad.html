@@ -5,9 +5,9 @@
                 <form role="form" class="form-inline form-horizontal" id="floor_bad">
                     <div class="row col-md-12" style="margin-bottom: 1rem;" id="floor_bad_1">
                         <div class="input-group col-md-4">
-                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_input_1">
+                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_width_1">
                             <div class="input-group-append">
-                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_1">
+                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_width_1">
                                     <option value="4">/尺</option>
                                     <option value="3">/英寸</option>
                                     <option value="2">/厘米</option>
@@ -17,9 +17,9 @@
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group col-md-4">
-                            <input type="text" class="form-control" placeholder="输入长度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_input_1">
+                            <input type="text" class="form-control" placeholder="输入长度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_length_1">
                             <div class="input-group-append">
-                                <select class="form-control" style="height: 2.2rem !important;">
+                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_length_1">
                                     <option value="4">/尺</option>
                                     <option value="3">/英寸</option>
                                     <option value="2">/厘米</option>
@@ -34,7 +34,7 @@
                                     <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>
                                 </font>
                             </label>
-                            <select class="form-control m-b" name="account" style="height: 2.2rem !important;">
+                            <select class="form-control m-b" style="height: 2.2rem !important;" id="floor_high_1">
                                 {{range .floor}}
                                 <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}厘米/{{.HighIn}}英寸/{{.HighCi}}尺</option>
                                 {{end}}
@@ -61,9 +61,9 @@
         let num = parseInt($("#floor_num").val());
         let str = '<div class="row col-md-12" style="margin-bottom: 1rem;" id="floor_bad_'+ num +'">\n' +
             '                        <div class="input-group col-md-4">\n' +
-            '                            <input type="text" class="form-control" placeholder="输入宽度">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="floor_width_'+ num +'">\n' +
             '                            <div class="input-group-append">\n' +
-            '                                <select class="form-control" style="height: 2.2rem !important;">\n' +
+            '                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_width_'+ num +'">\n' +
             '                                    <option value="4">/尺</option>\n' +
             '                                    <option value="3">/英寸</option>\n' +
             '                                    <option value="2">/厘米</option>\n' +
@@ -73,9 +73,9 @@
             '                        </div>\n' +
             '                        &nbsp;&nbsp;&nbsp;&nbsp;\n' +
             '                        <div class="input-group col-md-4">\n' +
-            '                            <input type="text" class="form-control" placeholder="输入长度">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入长度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="floor_length_'+ num +'">\n' +
             '                            <div class="input-group-append">\n' +
-            '                                <select class="form-control" style="height: 2.2rem !important;">\n' +
+            '                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_length_'+ num +'">\n' +
             '                                    <option value="4">/尺</option>\n' +
             '                                    <option value="3">/英寸</option>\n' +
             '                                    <option value="2">/厘米</option>\n' +
@@ -90,7 +90,7 @@
             '                                    <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>\n' +
             '                                </font>\n' +
             '                            </label>\n' +
-            '                            <select class="form-control m-b" name="account">\n' +
+            '                            <select class="form-control m-b" name="account" id="floor_high_'+ num +'">\n' +
             '                                {{range .floor}}\n' +
             '                                <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}厘米/{{.HighIn}}英寸/{{.HighCi}}尺</option>\n' +
             '                                {{end}}\n' +
@@ -119,22 +119,64 @@
         }
     }
 
-    //单位转换成mm
+    //单位转换成尺
     function lengthToMm(n,t) {
+        n = Number(n);
         switch (t) {
-            case 1://mm
-                return n.toFixed(1);
+            case '1'://mm
+                return (n * 0.003).toFixed(3);//转换成尺
                 break;
-            case 2://cm
-                return (n * 10).toFixed(1);
+            case '2'://cm
+                return (n * 0.03).toFixed(3);
                 break;
-            case 3://in
-                return (n * 0.03).toFixed(1);
+            case '3'://in
+                return (n * 0.0762).toFixed(3);
                 break;
-            case 4://ci
-                return (n * 0.003).toFixed(1);
+            case '4'://ci
+                return n.toFixed(3);
                 break;
         }
+    }
+    //获取单位代号名称
+    function getUnit(t) {
+        switch (t) {
+            case '1'://mm
+                return 'mm';//转换成尺
+                break;
+            case '2'://cm
+                return 'cm';
+                break;
+            case '3'://in
+                return 'in';
+                break;
+            case '4'://ci
+                return 'ft';
+                break;
+        }
+    }
+
+    
+    function floorPrice() {
+        let html = '';
+        for (let i = 1; i < 50; i++) {
+            if($("#floor_width_"+i).length > 0 && $("#floor_length_"+i).length > 0) {
+                let l = $("#floor_width_"+i).val();
+                let w = $("#floor_length_"+i).val();
+                let unit = $("#floor_select_width_"+i).val();
+                let unit1 = $("#floor_select_length_"+i).val();
+                let price = $("#floor_high_"+i).val();
+                let long = lengthToMm(l,unit);
+                let width = lengthToMm(w,unit1);
+                let area = Math.round(long * width);
+                if (area < 18) {
+                    area = 18
+                }
+                let floor_price = (area * price).toFixed(2);
+                let str = '地台床:长'+ l + getUnit(unit)+';宽'+w+getUnit(unit1)+';('+long+'尺 X '+ width +'尺 = '+area+'平方尺 X 每平方尺价格('+ price +') = '+floor_price+')';
+                html += str+'\n';
+            }
+        }
+        console.log(html);
     }
 
 
