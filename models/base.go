@@ -19,6 +19,7 @@ func Init() {
 	orm.RegisterDataBase("default", "mysql", dsn)
 	orm.RegisterModel(
 		new(FloorBad),
+		new(HighBad),
 		)
 }
 
