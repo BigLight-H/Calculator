@@ -54,6 +54,13 @@
                             </font>
                         </a>
                     </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-7">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> 鞋柜</font>
+                            </font>
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-3" class="tab-pane active">
@@ -67,6 +74,9 @@
                     </div>
                     <div id="tab-6" class="tab-pane">
                         {{template "c-cabinet.html" .}}
+                    </div>
+                    <div id="tab-7" class="tab-pane">
+                        {{template "shoebox.html" .}}
                     </div>
                 </div>
             </div>
@@ -100,6 +110,7 @@
             highPrice();
             wardrobePrice();
             wardrobeCPrice();
+            ShoeboxPrice();
         }
 
     </script>
