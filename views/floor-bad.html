@@ -171,12 +171,16 @@
                 if (area < 18) {
                     area = 18
                 }
-                let floor_price = (area * price).toFixed(2);
-                let str = '地台床:长'+ l + getUnit(unit)+';宽'+w+getUnit(unit1)+';('+long+'尺 X '+ width +'尺 = '+area+'平方尺 X 每平方尺价格('+ price +') = '+floor_price+')';
-                html += str+'\n';
+                if (Number(l)> 0 && Number(w) > 0){
+                    let floor_price = (area * price).toFixed(2);
+                    let str = '地台床:长'+ l + getUnit(unit)+';宽'+w+getUnit(unit1)+';('+long+'尺 X '+ width +'尺 = '+area+'平方尺 X 每平方尺价格('+ price +') = '+floor_price+')';
+                    html += str+'\n';
+                }
             }
         }
-        console.log(html);
+        if (html != '') {
+            console.log(html);
+        }
     }
 
 

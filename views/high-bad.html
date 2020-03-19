@@ -114,26 +114,26 @@
         }
         if (num > 1) {
             let div = document.getElementById("high_bad_"+n);
-            let parent = div.parentNode
+            let parent = div.parentNode;
             parent.removeChild(div);
         }
     }
 
-    //单位转换成英寸
+    //单位转换成英尺
     function lengthToMm(n,t) {
         n = Number(n);
         switch (t) {
             case '1'://mm
-                return (n * 0.039).toFixed(3);
+                return (n * 0.0033).toFixed(3);
                 break;
             case '2'://cm
-                return (n * 0.39).toFixed(3);
+                return (n * 0.033).toFixed(3);
                 break;
             case '3'://in
-                return n.toFixed(3);
+                return (n * 0.10).toFixed(3);
                 break;
             case '4'://ci
-                return (n * 13.12).toFixed(3);
+                return (n * 1.094).toFixed(3);
                 break;
         }
     }
@@ -141,7 +141,7 @@
     function getUnit(t) {
         switch (t) {
             case '1'://mm
-                return 'mm';//转换成尺
+                return 'mm';
                 break;
             case '2'://cm
                 return 'cm';
@@ -168,15 +168,19 @@
                 let long = lengthToMm(l,unit);
                 let width = lengthToMm(w,unit1);
                 let area = Math.round(long * width);
-                if (area < 18) {
-                    area = 18
+                if (area < 22) {
+                    area = 22
                 }
-                let high_price = (area * price).toFixed(2);
-                let str = '高床:长'+ l + getUnit(unit)+';宽'+w+getUnit(unit1)+';('+long+'英寸 X '+ width +'英寸 = '+area+'平方英寸 X 每平方英寸价格('+ price +') = '+high_price+')';
-                html += str+'\n';
+                if (Number(l)> 0 && Number(w) > 0) {
+                    let high_price = (area * price).toFixed(2);
+                    let str = '高床:长' + l + getUnit(unit) + ';宽' + w + getUnit(unit1) + ';(' + long + '英尺 X ' + width + '英尺 = ' + area + '平方英尺 X 每平方英尺价格(' + price + ') = ' + high_price + ')';
+                    html += str + '\n';
+                }
             }
         }
-        console.log(html);
+        if (html != '') {
+            console.log(html);
+        }
     }
 
 
