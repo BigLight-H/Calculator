@@ -90,12 +90,14 @@
                     let p = getFitPrice(s, i);
                     let placeholder = $("#fit_"+i).attr('placeholder');
                     let name = getFitName(i);
-                    html += name +'('+placeholder+') X '+ s +' = '+p+'\n';
+                    html += '<p>'+name +'('+placeholder+') X '+ s +' = '+p+'<\p>';
                 }
             }
         }
-        if (html != ''){
-            console.log(html);
+        if (html != '') {
+            return html;
+        } else {
+            return false;
         }
     }
 

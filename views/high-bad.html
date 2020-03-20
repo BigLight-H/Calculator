@@ -173,13 +173,15 @@
                 }
                 if (Number(l)> 0 && Number(w) > 0) {
                     let high_price = (area * price).toFixed(2);
-                    let str = '高床:长' + l + getUnit(unit) + ';宽' + w + getUnit(unit1) + ';(' + long + '英尺 X ' + width + '英尺 = ' + area + '平方英尺 X 每平方英尺价格(' + price + ') = ' + high_price + ')';
+                    let str = '<p>高床:长' + l + getUnit(unit) + ';宽' + w + getUnit(unit1) + ';(' + long + '英尺 X ' + width + '英尺 = ' + area + '平方英尺 X 每平方英尺价格(' + price + ') = ' + high_price + ')<\p>';
                     html += str + '\n';
                 }
             }
         }
         if (html != '') {
-            console.log(html);
+            return html;
+        } else {
+            return false;
         }
     }
 

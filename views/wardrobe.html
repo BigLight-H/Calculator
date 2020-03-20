@@ -260,13 +260,15 @@
                 }
                 if (Number(w)> 0) {
                     let price_money = Math.round(long * price);
-                    let str = '衣柜:宽' + w + getUnit(unit) + ';高' + getHighNum(unit1) +';深度' + getDepth(h) + ';(' + long + '尺 X ' + price + '/每尺 = ' + price_money+ ')';
+                    let str = '<p>衣柜:宽' + w + getUnit(unit) + ';高' + getHighNum(unit1) +';深度' + getDepth(h) + ';(' + long + '尺 X ' + price + '/每尺 = ' + price_money+ ')<\p>';
                     html += str + '\n';
                 }
             }
         }
         if (html != '') {
-            console.log(html);
+            return html;
+        } else {
+            return false;
         }
     }
 

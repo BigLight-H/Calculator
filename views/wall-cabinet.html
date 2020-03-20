@@ -256,13 +256,15 @@
                 }
                 if (Number(w)> 0) {
                     let price_money = Math.round(long * price);
-                    let str = '吊柜:宽' + w + getUnit(unit) + ';高' + getWallHighNum(unit1) +';深度' + getWallDepth(h) + ';(' + long + '尺 X ' + price + '/每尺 = ' + price_money+ ')';
+                    let str = '<p>吊柜:宽' + w + getUnit(unit) + ';高' + getWallHighNum(unit1) +';深度' + getWallDepth(h) + ';(' + long + '尺 X ' + price + '/每尺 = ' + price_money+ ')<\p>';
                     html += str + '\n';
                 }
             }
         }
         if (html != '') {
-            console.log(html);
+            return html;
+        } else {
+            return false;
         }
     }
 
