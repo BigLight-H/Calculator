@@ -69,6 +69,20 @@
                             </font>
                         </a>
                     </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-9">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> 地柜</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-10">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> 吊柜</font>
+                            </font>
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-3" class="tab-pane active">
@@ -88,6 +102,12 @@
                     </div>
                     <div id="tab-8" class="tab-pane">
                         {{template "fitting.html" .}}
+                    </div>
+                    <div id="tab-9" class="tab-pane">
+                        {{template "cabinet.html" .}}
+                    </div>
+                    <div id="tab-10" class="tab-pane">
+                        {{template "wall-cabinet.html" .}}
                     </div>
                 </div>
             </div>
@@ -124,6 +144,8 @@
             wardrobeCPrice();
             ShoeboxPrice();
             fitPrice();
+            cabinetPrice();
+            wallPrice();
         }
 
     </script>

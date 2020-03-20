@@ -1,0 +1,270 @@
+<div class="panel-body">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-content " style="border: none !important;">
+                <form role="form" class="form-inline form-horizontal" id="wall">
+                    <div class="row col-md-12" style="margin-bottom: 1rem;" id="wall_1">
+                        <div class="input-group col-md-4">
+                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\d.]/g,'')" id="wall_width_1">
+                            <div class="input-group-append">
+                                <select class="form-control" style="height: 2.2rem !important;" id="wall_select_width_1">
+                                    <option value="4">/尺</option>
+                                    <option value="3">/英寸</option>
+                                    <option value="2">/厘米</option>
+                                    <option value="1" selected>/毫米</option>
+                                </select>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-group col-md-4">
+                            <label>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">深度&nbsp;&nbsp;&nbsp;</font>
+                                </font>
+                            </label>
+                            <div class="input-group-append">
+                                <select class="form-control" style="height: 2.2rem !important;" id="wall_select_depth_1">
+                                    <option value="1" selected>14英寸/350mm/35cm/1.05尺</option>
+                                    <option value="2">16英寸/400mm/40cm/1.2尺</option>
+                                    <option value="3">18英寸/450mm/45cm/1.35尺</option>
+                                    <option value="4">20英寸/500mm/50cm/1.5尺</option>
+                                    <option value="5">22英寸/550mm/55cm/1.65尺</option>
+                                    <option value="6">24英寸/600mm/60cm/1.8尺</option>
+                                </select>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-group col-md-3">
+                            <label>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>
+                                </font>
+                            </label>
+                            <select class="form-control m-b" style="height: 2.2rem !important;" id="wall_high_1">
+                                <option value="1">2.0尺</option>
+                                <option value="2">2.5尺</option>
+                                <option value="3">3.0尺</option>
+                                <option value="4">3.5尺</option>
+                                <option value="5">4.0尺</option>
+                            </select>
+                        </div>
+                        <i class="fa fa-times" style="font-size: 20px;line-height: 2.2rem" onclick="delWallInput(1)"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <a class="btn btn-primary btn-rounded btn-block col-md-5" href="#" style="margin: 0 auto;" onclick="addWall();">
+                <i class="fa fa-info-circle"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;"> 添加表单</font>
+                </font>
+            </a>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="wall_num" value="2">
+<script>
+    function addWall() {
+        let num = parseInt($("#wall_num").val());
+        let str = '<div class="row col-md-12" style="margin-bottom: 1rem;" id="wall_'+num+'">\n' +
+            '                        <div class="input-group col-md-4">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="wall_width_'+num+'">\n' +
+            '                            <div class="input-group-append">\n' +
+            '                                <select class="form-control" style="height: 2.2rem !important;" id="wall_select_width_'+num+'">\n' +
+            '                                    <option value="4">/尺</option>\n' +
+            '                                    <option value="3">/英寸</option>\n' +
+            '                                    <option value="2">/厘米</option>\n' +
+            '                                    <option value="1" selected>/毫米</option>\n' +
+            '                                </select>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
+            '                        &nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <div class="input-group col-md-4">\n' +
+            '                            <label>\n' +
+            '                                <font style="vertical-align: inherit;">\n' +
+            '                                    <font style="vertical-align: inherit;">深度&nbsp;&nbsp;&nbsp;</font>\n' +
+            '                                </font>\n' +
+            '                            </label>\n' +
+            '                            <div class="input-group-append">\n' +
+            '                                <select class="form-control" style="height: 2.2rem !important;" id="wall_select_depth_'+num+'">\n' +
+            '                                    <option value="1" selected>14英寸/350mm/35cm/1.05尺</option>\n' +
+            '                                    <option value="2">16英寸/400mm/40cm/1.2尺</option>\n' +
+            '                                    <option value="3">18英寸/450mm/45cm/1.35尺</option>\n' +
+            '                                    <option value="4">20英寸/500mm/50cm/1.5尺</option>\n' +
+            '                                    <option value="5">22英寸/550mm/55cm/1.65尺</option>\n' +
+            '                                    <option value="6">24英寸/600mm/60cm/1.8尺</option>\n' +
+            '                                </select>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
+            '                        &nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <div class="input-group col-md-3">\n' +
+            '                            <label>\n' +
+            '                                <font style="vertical-align: inherit;">\n' +
+            '                                    <font style="vertical-align: inherit;">高度&nbsp;&nbsp;&nbsp;</font>\n' +
+            '                                </font>\n' +
+            '                            </label>\n' +
+            '                            <select class="form-control m-b" style="height: 2.2rem !important;" id="wall_high_'+num+'">\n' +
+            '                                <option value="1">2.0尺</option>\n' +
+            '                                <option value="2">2.5尺</option>\n' +
+            '                                <option value="3">3.0尺</option>\n' +
+            '                                <option value="4">3.5尺</option>\n' +
+            '                                <option value="5">4.0尺</option>\n' +
+            '                            </select>\n' +
+            '                        </div>\n' +
+            '                        <i class="fa fa-times" style="font-size: 20px;line-height: 2.2rem" onclick="delWallInput('+num+')"></i>\n' +
+            '                    </div>';
+        $("#wall").append(str);
+
+        $("#wall_num").val(num+1);
+
+    }
+
+    //获取单价
+    function getWallPrice(s, h) {
+        switch (s) {
+            case '1':
+                return (Number(h)*50)+439;
+                break;
+            case '2':
+                return (Number(h)*50)+489;
+                break;
+            case '3':
+                return (Number(h)*50)+539;
+                break;
+            case '4':
+                return (Number(h)*50)+589;
+                break;
+            case '5':
+                return (Number(h)*50)+639;
+                break;
+            case '6':
+                return (Number(h)*50)+689;
+                break;
+        }
+    }
+    //获取高度
+    function getWallHighNum(h) {
+        switch (h) {
+            case '1':
+                return '2.0尺';
+                break;
+            case '2':
+                return '2.5尺';
+                break;
+            case '3':
+                return '3.0尺';
+                break;
+            case '4':
+                return '3.5尺';
+                break;
+            case '5':
+                return '4.0尺';
+                break;
+        }
+    }
+
+    //获取深度
+    function getWallDepth(s) {
+        switch (s) {
+            case '1':
+                return '14英寸350mm';
+                break;
+            case '2':
+                return '16英寸400mm';
+                break;
+            case '3':
+                return '18英寸450mm';
+                break;
+            case '4':
+                return '20英寸500mm';
+                break;
+            case '5':
+                return '22英寸550mm';
+                break;
+            case '6':
+                return '24英寸600mm';
+                break;
+        }
+    }
+
+    //删除指定表单
+    function delWallInput(n) {
+        let num = 0;
+        for (let i = 1; i < 50; i++) {
+            if($("#wall_"+i).length > 0) {
+                num ++;
+            }
+        }
+        if (num > 1) {
+            let div = document.getElementById("wall_"+n);
+            let parent = div.parentNode;
+            parent.removeChild(div);
+        }
+    }
+
+    //单位转换成尺
+    function lengthToCi(n,t) {
+        n = Number(n);
+        switch (t) {
+            case '1'://mm
+                return (n * 0.003).toFixed(3);
+                break;
+            case '2'://cm
+                return (n * 0.03).toFixed(3);
+                break;
+            case '3'://in
+                return (n * 0.0762).toFixed(3);
+                break;
+            case '4'://ci
+                return (n).toFixed(3);
+                break;
+        }
+    }
+    //获取单位代号名称
+    function getUnit(t) {
+        switch (t) {
+            case '1'://mm
+                return 'mm';
+                break;
+            case '2'://cm
+                return 'cm';
+                break;
+            case '3'://in
+                return 'in';
+                break;
+            case '4'://ci
+                return 'ft';
+                break;
+        }
+    }
+
+
+    function wallPrice() {
+        let html = '';
+        for (let i = 1; i < 50; i++) {
+            if($("#wall_width_"+i).length > 0) {
+                let w = $("#wall_width_"+i).val();
+                let h = $("#wall_select_depth_"+i).val();
+                let unit = $("#wall_select_width_"+i).val();
+                let unit1 = $("#wall_high_"+i).val();
+
+                let long = lengthToCi(w,unit);
+                let price = getWallPrice(h,unit1);
+                if (Number(long) < 2) {
+                    long = 2;
+                }
+                if (Number(w)> 0) {
+                    let price_money = Math.round(long * price);
+                    let str = '吊柜:宽' + w + getUnit(unit) + ';高' + getWallHighNum(unit1) +';深度' + getWallDepth(h) + ';(' + long + '尺 X ' + price + '/每尺 = ' + price_money+ ')';
+                    html += str + '\n';
+                }
+            }
+        }
+        if (html != '') {
+            console.log(html);
+        }
+    }
+
+
+</script>
