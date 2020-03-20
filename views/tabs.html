@@ -123,8 +123,11 @@
         <div class="col-lg-12">
             <div class="jumbotron">
                 <h1>计算结果</h1>
-                <div id="results"></div>
+                <div id="results" class="results"></div>
             </div>
+            <p>
+                <button id="copy" class="btn btn-primary pull-right" type="button" data-clipboard-target="#results"><i class="fa fa-check"></i>&nbsp;复制文本</button>
+            </p>
         </div>
     </div>
 
@@ -134,6 +137,7 @@
     <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
 
 
     <!-- Custom and plugin javascript -->
@@ -170,6 +174,21 @@
             }
             $("#results").append(html);
         }
+
+        var clipboard = new ClipboardJS('#copy');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
 
     </script>
 
