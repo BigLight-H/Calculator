@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1f758a7-cdbe-443f-9354-852b458786ef" name="Default Changelist" comment="" />
+    <list default="true" id="f1f758a7-cdbe-443f-9354-852b458786ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/views/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/tabs.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\go\src\Calculator\static\img" />
       <recent name="C:\Users\Administrator\go\src\Calculator\static\js" />
       <recent name="C:\Users\Administrator\go\src\Calculator\models" />
       <recent name="C:\Users\Administrator\go\src\Calculator\views" />
