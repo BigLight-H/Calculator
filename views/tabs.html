@@ -126,7 +126,8 @@
                 <div id="results" class="results"></div>
             </div>
             <p>
-                <button id="copy" class="btn btn-primary pull-right" type="button" data-clipboard-target="#results"><i class="fa fa-check"></i>&nbsp;复制文本</button>
+                <button id="copy" class="btn btn-primary pull-right" type="button" data-clipboard-target="#results" data-toggle="tooltip"
+                        data-placement="left" title="已复制!" data-trigger="click" ><i class="fa fa-check"></i>&nbsp;复制文本</button>
             </p>
         </div>
     </div>
@@ -144,6 +145,7 @@
     <script src="/static/js/inspinia.js"></script>
     <script src="/static/js/plugins/pace/pace.min.js"></script>
     <script>
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
         function calculate_all() {
             $("#results").text('');
@@ -183,6 +185,7 @@
             console.info('Trigger:', e.trigger);
 
             e.clearSelection();
+
         });
 
         clipboard.on('error', function(e) {
