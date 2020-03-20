@@ -12,6 +12,7 @@
     <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/static/css/animate.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
 
 </head>
 
@@ -61,6 +62,13 @@
                             </font>
                         </a>
                     </li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-8">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> 衣柜地台床配件</font>
+                            </font>
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-3" class="tab-pane active">
@@ -77,6 +85,9 @@
                     </div>
                     <div id="tab-7" class="tab-pane">
                         {{template "shoebox.html" .}}
+                    </div>
+                    <div id="tab-8" class="tab-pane">
+                        {{template "fitting.html" .}}
                     </div>
                 </div>
             </div>
@@ -100,6 +111,7 @@
     <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+
     <!-- Custom and plugin javascript -->
     <script src="/static/js/inspinia.js"></script>
     <script src="/static/js/plugins/pace/pace.min.js"></script>
@@ -111,6 +123,7 @@
             wardrobePrice();
             wardrobeCPrice();
             ShoeboxPrice();
+            fitPrice();
         }
 
     </script>

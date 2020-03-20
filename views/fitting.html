@@ -1,0 +1,205 @@
+<div class="panel-body">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-content " style="border: none !important;">
+                <form role="form" class="form-inline form-horizontal" id="shoebox">
+                    <div class="row">
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">拉手陶瓷</label>
+                            <input class="touchspin1" type="text" value="" placeholder="30$/个" style="height: 33px" id="fit_1">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">斜抽拉手</label>
+                            <input class="touchspin1" type="text" value="" placeholder="39$/尺" style="height: 33px" id="fit_2">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">抽屉锁头</label>
+                            <input class="touchspin1" type="text" value="" placeholder="50$/个" style="height: 33px" id="fit_3">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">小汽撑</label>
+                            <input class="touchspin1" type="text" value="" placeholder="50$/个" style="height: 33px" id="fit_4">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">油压大汽撑</label>
+                            <input class="touchspin1" type="text" value="" placeholder="750$/付" style="height: 33px" id="fit_5">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">万向轮</label>
+                            <input class="touchspin1" type="text" value="" placeholder="50$/个" style="height: 33px" id="fit_6">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">推拉门锁</label>
+                            <input class="touchspin1" type="text" value="" placeholder="250$/个" style="height: 33px" id="fit_7">
+                        </div>
+                    </div>
+                    <hr width="100%">
+                    <div class="row">
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">衣柜多宝格</label>
+                            <input class="touchspin1" type="text" value="" placeholder="600$/个" style="height: 33px" id="fit_8">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">裤架</label>
+                            <input class="touchspin1" type="text" value="" placeholder="300$/个" style="height: 33px" id="fit_9">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">一般柜桶</label>
+                            <input class="touchspin1" type="text" value="" placeholder="188$" style="height: 33px" id="fit_10">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">柜桶缓冲</label>
+                            <input class="touchspin1" type="text" value="" placeholder="299$" style="height: 33px" id="fit_11">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">静音轨</label>
+                            <input class="touchspin1" type="text" value="" placeholder="199$" style="height: 33px" id="fit_12">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">门附加安装费</label>
+                            <input class="touchspin1" type="text" value="" placeholder="800$/付" style="height: 33px" id="fit_13">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">玻璃</label>
+                            <input class="touchspin1" type="text" value="" placeholder="79$/平方尺,超50平方尺打8折" style="height: 33px" id="fit_14">
+                        </div>
+                        <div class="col-md-2" style="display: flex; margin-bottom: 1rem;">
+                            <label class="col-md-5">推拉门</label>
+                            <input class="touchspin1" type="text" value="" placeholder="99$/尺" style="height: 33px" id="fit_15">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery-3.1.1.min.js"></script>
+<script src="/static/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+<script>
+    $(".touchspin1").TouchSpin({
+        buttondown_class: 'btn btn-white',
+        buttonup_class: 'btn btn-white'
+    });
+
+    function fitPrice() {
+        let html = '';
+        for (let i = 1; i < 16; i++) {
+            if ($("#fit_"+i).length > 0) {
+                let s = $("#fit_"+i).val();
+                if (Number(s) > 0){
+                    let p = getFitPrice(s, i);
+                    let placeholder = $("#fit_"+i).attr('placeholder');
+                    let name = getFitName(i);
+                    html += name +'('+placeholder+') X '+ s +' = '+p+'\n';
+                }
+            }
+        }
+        if (html != ''){
+            console.log(html);
+        }
+    }
+
+    function getFitPrice(s, n) {
+        switch (n) {
+            case 1:
+                return Number(s)*30;
+                break;
+            case 2:
+                return Number(s)*39;
+                break;
+            case 3:
+                return Number(s)*50;
+                break;
+            case 4:
+                return Number(s)*50;
+                break;
+            case 5:
+                return Number(s)*750;
+                break;
+            case 6:
+                return Number(s)*50;
+                break;
+            case 7:
+                return Number(s)*250;
+                break;
+            case 8:
+                return Number(s)*600;
+                break;
+            case 9:
+                return Number(s)*300;
+                break;
+            case 10:
+                return Number(s)*180;
+                break;
+            case 11:
+                return Number(s)*299;
+                break;
+            case 12:
+                return Number(s)*199;
+                break;
+            case 13:
+                return Number(s)*800;
+                break;
+            case 14:
+                if (Number(s)>50){
+                    return Number(s)*79*0.8;
+                }
+                return Number(s)*79;
+                break;
+            case 15:
+                return Number(s)*99;
+                break;
+        }
+    }
+
+    function getFitName(n) {
+        switch (n) {
+            case 1:
+                return '拉手陶瓷';
+                break;
+            case 2:
+                return '斜抽拉手';
+                break;
+            case 3:
+                return '抽屉锁头';
+                break;
+            case 4:
+                return '小汽撑';
+                break;
+            case 5:
+                return '油压大汽撑';
+                break;
+            case 6:
+                return '万向轮';
+                break;
+            case 7:
+                return '推拉门锁';
+                break;
+            case 8:
+                return '衣柜多宝格';
+                break;
+            case 9:
+                return '裤架';
+                break;
+            case 10:
+                return '一般柜桶';
+                break;
+            case 11:
+                return '柜桶缓冲骑马抽';
+                break;
+            case 12:
+                return '静音轨';
+                break;
+            case 13:
+                return '门的附加安装费用';
+                break;
+            case 14:
+                return '玻璃';
+                break;
+            case 15:
+                return '推拉门';
+                break;
+        }
+    }
+
+</script>
