@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"Calculator/models"
-	"github.com/davecgh/go-spew/spew"
 )
 
 type IndexController struct {
@@ -18,5 +17,4 @@ func (c *IndexController) Get() {
 	c.Data["floor"] = &floors
 	c.Data["high"] = &high
 	c.TplName = "tabs.html"
-	spew.Dump(floors)
 }
