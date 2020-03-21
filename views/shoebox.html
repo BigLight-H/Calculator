@@ -134,6 +134,7 @@
 
     //获取单价
     function getShoeboxPrice(s, h) {
+        h = Number(h) - 1;
         switch (s) {
             case '1':
                 return (Number(h)*100)+699;

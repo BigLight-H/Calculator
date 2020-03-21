@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1f758a7-cdbe-443f-9354-852b458786ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/c-cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/c-cabinet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fitting.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/fitting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/floor-bad.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/floor-bad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/high-bad.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/high-bad.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/shoebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/shoebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/tabs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/wall-cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/wall-cabinet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/wardrobe.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/wardrobe.html" afterDir="false" />
     </list>

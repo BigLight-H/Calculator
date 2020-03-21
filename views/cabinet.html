@@ -124,6 +124,7 @@
 
     //获取单价
     function getCabinetPrice(s, h) {
+        h = Number(h) - 1;
         switch (s) {
             case '1':
                 return (Number(h)*50)+439;
