@@ -121,7 +121,7 @@
     }
 
     //单位转换成呎
-    function lengthToMm(n,t) {
+    function lengthFloorToMm(n,t) {
         n = Number(n);
         switch (t) {
             case '1'://mm
@@ -167,15 +167,15 @@
                 let unit = $("#floor_select_width_"+i).val();
                 let unit1 = $("#floor_select_length_"+i).val();
                 let price = $("#floor_high_"+i).val();
-                let long = lengthToMm(l,unit);
-                let width = lengthToMm(w,unit1);
-                let area = Math.round(long * width);
-                if (area < 18) {
-                    area = 18
+                let long = lengthFloorToMm(l,unit);
+                let width = lengthFloorToMm(w,unit1);
+                let area_floor = Math.round(long * width);
+                if (area_floor < 18) {
+                    area_floor = 18
                 }
                 if (Number(l)> 0 && Number(w) > 0){
-                    let floor_price = (area * price).toFixed(2);
-                    let str = '<p>地台床:長'+ l + getUnit(unit)+';寬'+w+getUnit(unit1)+';('+long+'呎 X '+ width +'呎 = '+area+'平方呎 X 每平方呎价格('+ price +') = '+floor_price+')<\p>';
+                    let floor_price = (area_floor * price).toFixed(2);
+                    let str = '<p>地台床:長'+ l + getUnit(unit)+';寬'+w+getUnit(unit1)+';('+long+'呎 X '+ width +'呎 = '+area_floor+'平方呎 X 每平方呎价格('+ price +') = '+floor_price+')<\p>';
                     html += str+'\n';
                     let m =  $("#floor_price").val();
                     $("#floor_price").val(Number(m)+Number(floor_price));

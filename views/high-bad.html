@@ -121,7 +121,7 @@
     }
 
     //单位转换成英呎
-    function lengthToMm(n,t) {
+    function lengthHighToMm(n,t) {
         n = Number(n);
         switch (t) {
             case '1'://mm
@@ -134,28 +134,10 @@
                 return (n * 0.10).toFixed(3);
                 break;
             case '4'://ci
-                return (n * 1.094).toFixed(3);
+                return (n).toFixed(3);
                 break;
         }
     }
-    //获取单位代号名称
-    function getUnit(t) {
-        switch (t) {
-            case '1'://mm
-                return 'mm';
-                break;
-            case '2'://cm
-                return 'cm';
-                break;
-            case '3'://in
-                return 'in';
-                break;
-            case '4'://ci
-                return 'ft';
-                break;
-        }
-    }
-
 
     function highPrice() {
         $("#high_price").val(0);
@@ -167,15 +149,15 @@
                 let unit = $("#high_select_width_"+i).val();
                 let unit1 = $("#high_select_length_"+i).val();
                 let price = $("#high_high_"+i).val();
-                let long = lengthToMm(l,unit);
-                let width = lengthToMm(w,unit1);
-                let area = Math.round(long * width);
-                if (area < 22) {
-                    area = 22
+                let long = lengthHighToMm(l,unit);
+                let width = lengthHighToMm(w,unit1);
+                let area_high = Math.round(long * width);
+                if (area_high < 22) {
+                    area_high = 22
                 }
                 if (Number(l)> 0 && Number(w) > 0) {
-                    let high_price = (area * price).toFixed(2);
-                    let str = '<p>高床:长' + l + getUnit(unit) + ';寬' + w + getUnit(unit1) + ';(' + long + '英呎 X ' + width + '英呎 = ' + area + '平方英呎 X 每平方英呎价格(' + price + ') = ' + high_price + ')<\p>';
+                    let high_price = (area_high * price).toFixed(2);
+                    let str = '<p>高床:长' + l + getUnit(unit) + ';寬' + w + getUnit(unit1) + ';(' + long + '英呎 X ' + width + '英呎 = ' + area_high + '平方英呎 X 每平方英呎价格(' + price + ') = ' + high_price + ')<\p>';
                     html += str + '\n';
                     let m = $("#high_price").val();
                     $("#high_price").val(Number(m) + Number(high_price));

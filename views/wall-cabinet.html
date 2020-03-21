@@ -204,43 +204,6 @@
         }
     }
 
-    //单位转换成呎
-    function lengthToCi(n,t) {
-        n = Number(n);
-        switch (t) {
-            case '1'://mm
-                return (n * 0.003).toFixed(3);
-                break;
-            case '2'://cm
-                return (n * 0.03).toFixed(3);
-                break;
-            case '3'://in
-                return (n * 0.0762).toFixed(3);
-                break;
-            case '4'://ci
-                return (n).toFixed(3);
-                break;
-        }
-    }
-    //获取单位代号名称
-    function getUnit(t) {
-        switch (t) {
-            case '1'://mm
-                return 'mm';
-                break;
-            case '2'://cm
-                return 'cm';
-                break;
-            case '3'://in
-                return 'in';
-                break;
-            case '4'://ci
-                return 'ft';
-                break;
-        }
-    }
-
-
     function wallPrice() {
         let html = '';
         $("#wall_price").val(0);

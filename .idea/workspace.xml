@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f1f758a7-cdbe-443f-9354-852b458786ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/c-cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/c-cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/floor-bad.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/floor-bad.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/high-bad.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/high-bad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/shoebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/shoebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/wall-cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/wall-cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/wardrobe.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/wardrobe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,9 +96,9 @@
       <screen x="0" y="23" width="1680" height="970" />
     </state>
     <state x="623" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.970@0.23.1680.970" timestamp="1584769184514" />
-    <state x="488" y="119" width="858" height="777" key="find.popup" timestamp="1584771926211">
+    <state x="488" y="119" width="858" height="777" key="find.popup" timestamp="1584780969857">
       <screen x="0" y="23" width="1680" height="970" />
     </state>
-    <state x="488" y="119" width="858" height="777" key="find.popup/0.23.1680.970@0.23.1680.970" timestamp="1584771926211" />
+    <state x="488" y="119" width="858" height="777" key="find.popup/0.23.1680.970@0.23.1680.970" timestamp="1584780969857" />
   </component>
 </project>
