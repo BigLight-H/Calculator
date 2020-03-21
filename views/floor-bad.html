@@ -5,12 +5,12 @@
                 <form role="form" class="form-inline form-horizontal" id="floor_bad">
                     <div class="row col-md-12" style="margin-bottom: 1rem;" id="floor_bad_1">
                         <div class="input-group col-md-4">
-                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_width_1">
+                            <input type="text" class="form-control" placeholder="输入寬度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_width_1">
                             <div class="input-group-append">
                                 <select class="form-control" style="height: 2.2rem !important;" id="floor_select_width_1">
-                                    <option value="4">/尺</option>
-                                    <option value="3">/英寸</option>
-                                    <option value="2">/厘米</option>
+                                    <option value="4">/呎</option>
+                                    <option value="3">/英吋</option>
+                                    <option value="2">/釐米</option>
                                     <option value="1" selected>/毫米</option>
                                 </select>
                             </div>
@@ -20,9 +20,9 @@
                             <input type="text" class="form-control" placeholder="输入长度" oninput = "value=value.replace(/[^\d.]/g,'')" id="floor_length_1">
                             <div class="input-group-append">
                                 <select class="form-control" style="height: 2.2rem !important;" id="floor_select_length_1">
-                                    <option value="4">/尺</option>
-                                    <option value="3">/英寸</option>
-                                    <option value="2">/厘米</option>
+                                    <option value="4">/呎</option>
+                                    <option value="3">/英吋</option>
+                                    <option value="2">/釐米</option>
                                     <option value="1" selected>/毫米</option>
                                 </select>
                             </div>
@@ -36,7 +36,7 @@
                             </label>
                             <select class="form-control m-b" style="height: 2.2rem !important;" id="floor_high_1">
                                 {{range .floor}}
-                                <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}厘米/{{.HighIn}}英寸/{{.HighCi}}尺</option>
+                                <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}釐米/{{.HighIn}}英吋/{{.HighCi}}呎</option>
                                 {{end}}
                             </select>
                         </div>
@@ -56,17 +56,18 @@
     </div>
 </div>
 <input type="hidden" id="floor_num" value="2">
+<input type="hidden" id="floor_price" value="0">
 <script>
     function addFloorBad() {
         let num = parseInt($("#floor_num").val());
         let str = '<div class="row col-md-12" style="margin-bottom: 1rem;" id="floor_bad_'+ num +'">\n' +
             '                        <div class="input-group col-md-4">\n' +
-            '                            <input type="text" class="form-control" placeholder="输入宽度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="floor_width_'+ num +'">\n' +
+            '                            <input type="text" class="form-control" placeholder="输入寬度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="floor_width_'+ num +'">\n' +
             '                            <div class="input-group-append">\n' +
             '                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_width_'+ num +'">\n' +
-            '                                    <option value="4">/尺</option>\n' +
-            '                                    <option value="3">/英寸</option>\n' +
-            '                                    <option value="2">/厘米</option>\n' +
+            '                                    <option value="4">/呎</option>\n' +
+            '                                    <option value="3">/英吋</option>\n' +
+            '                                    <option value="2">/釐米</option>\n' +
             '                                    <option value="1" selected>/毫米</option>\n' +
             '                                </select>\n' +
             '                            </div>\n' +
@@ -76,9 +77,9 @@
             '                            <input type="text" class="form-control" placeholder="输入长度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="floor_length_'+ num +'">\n' +
             '                            <div class="input-group-append">\n' +
             '                                <select class="form-control" style="height: 2.2rem !important;" id="floor_select_length_'+ num +'">\n' +
-            '                                    <option value="4">/尺</option>\n' +
-            '                                    <option value="3">/英寸</option>\n' +
-            '                                    <option value="2">/厘米</option>\n' +
+            '                                    <option value="4">/呎</option>\n' +
+            '                                    <option value="3">/英吋</option>\n' +
+            '                                    <option value="2">/釐米</option>\n' +
             '                                    <option value="1" selected>/毫米</option>\n' +
             '                                </select>\n' +
             '                            </div>\n' +
@@ -92,7 +93,7 @@
             '                            </label>\n' +
             '                            <select class="form-control m-b" name="account" id="floor_high_'+ num +'">\n' +
             '                                {{range .floor}}\n' +
-            '                                <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}厘米/{{.HighIn}}英寸/{{.HighCi}}尺</option>\n' +
+            '                                <option value="{{.Price}}">{{.HighMm}}毫米/{{.HighCm}}釐米/{{.HighIn}}英吋/{{.HighCi}}呎</option>\n' +
             '                                {{end}}\n' +
             '                            </select>\n' +
             '                        </div>\n' +
@@ -114,17 +115,17 @@
         }
         if (num > 1) {
             let div = document.getElementById("floor_bad_"+n);
-            let parent = div.parentNode
+            let parent = div.parentNode;
             parent.removeChild(div);
         }
     }
 
-    //单位转换成尺
+    //单位转换成呎
     function lengthToMm(n,t) {
         n = Number(n);
         switch (t) {
             case '1'://mm
-                return (n * 0.003).toFixed(3);//转换成尺
+                return (n * 0.003).toFixed(3);//转换成呎
                 break;
             case '2'://cm
                 return (n * 0.03).toFixed(3);
@@ -141,7 +142,7 @@
     function getUnit(t) {
         switch (t) {
             case '1'://mm
-                return 'mm';//转换成尺
+                return 'mm';//转换成呎
                 break;
             case '2'://cm
                 return 'cm';
@@ -157,6 +158,7 @@
 
     
     function floorPrice() {
+        $("#floor_price").val(0);
         let html = '';
         for (let i = 1; i < 50; i++) {
             if($("#floor_width_"+i).length > 0 && $("#floor_length_"+i).length > 0) {
@@ -173,8 +175,10 @@
                 }
                 if (Number(l)> 0 && Number(w) > 0){
                     let floor_price = (area * price).toFixed(2);
-                    let str = '<p>地台床:长'+ l + getUnit(unit)+';宽'+w+getUnit(unit1)+';('+long+'尺 X '+ width +'尺 = '+area+'平方尺 X 每平方尺价格('+ price +') = '+floor_price+')<\p>';
+                    let str = '<p>地台床:長'+ l + getUnit(unit)+';寬'+w+getUnit(unit1)+';('+long+'呎 X '+ width +'呎 = '+area+'平方呎 X 每平方呎价格('+ price +') = '+floor_price+')<\p>';
                     html += str+'\n';
+                    let m =  $("#floor_price").val();
+                    $("#floor_price").val(Number(m)+Number(floor_price));
                 }
             }
         }
