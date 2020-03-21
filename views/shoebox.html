@@ -1,3 +1,4 @@
+{{/*鞋櫃*/}}
 <div class="panel-body">
     <div class="col-lg-12">
         <div class="ibox ">
@@ -8,9 +9,9 @@
                             <input type="text" class="form-control" placeholder="输入寬度" oninput = "value=value.replace(/[^\d.]/g,'')" id="shoebox_width_1">
                             <div class="input-group-append">
                                 <select class="form-control" style="height: 2.2rem !important;" id="shoebox_select_width_1">
-                                    <option value="4"  selected>/呎</option>
-                                    <option value="3">/英吋</option>
-                                    <option value="2">/釐米</option>
+                                    <option value="4"  selected>/尺</option>
+                                    <option value="3">/寸</option>
+                                    <option value="2">/厘米</option>
                                     <option value="1">/毫米</option>
                                 </select>
                             </div>
@@ -24,13 +25,13 @@
                             </label>
                             <div class="input-group-append">
                                 <select class="form-control" style="height: 2.2rem !important;" id="shoebox_select_depth_1">
-                                    <option value="1" selected>14英吋/350mm/35cm/1.05呎</option>
-                                    <option value="2">16英吋/400mm/40cm/1.2呎</option>
-                                    <option value="3">18英吋/450mm/45cm/1.35呎</option>
-                                    <option value="4">20英吋/500mm/50cm/1.5呎</option>
-                                    <option value="5">22英吋/550mm/55cm/1.65呎</option>
-                                    <option value="6">24英吋/600mm/60cm/1.8呎</option>
-                                    <option value="7">26英吋/650mm/65cm/1.95呎</option>
+                                    <option value="1" selected>14寸/350mm/35cm/1.05尺</option>
+                                    <option value="2">16寸/400mm/40cm/1.2尺</option>
+                                    <option value="3">18寸/450mm/45cm/1.35尺</option>
+                                    <option value="4">20寸/500mm/50cm/1.5尺</option>
+                                    <option value="5">22寸/550mm/55cm/1.65尺</option>
+                                    <option value="6">24寸/600mm/60cm/1.8尺</option>
+                                    <option value="7">26寸/650mm/65cm/1.95尺</option>
                                 </select>
                             </div>
                         </div>
@@ -42,15 +43,15 @@
                                 </font>
                             </label>
                             <select class="form-control m-b" style="height: 2.2rem !important;" id="shoebox_high_1">
-                                <option value="1">3.0呎</option>
-                                <option value="2">4.0呎</option>
-                                <option value="3">5.0呎</option>
-                                <option value="4">6.0呎</option>
-                                <option value="5">7.0呎</option>
-                                <option value="6">8.0呎</option>
-                                <option value="7">8.5呎</option>
-                                <option value="8">9.0呎</option>
-                                <option value="9">9.5呎</option>
+                                <option value="1">3.0尺</option>
+                                <option value="2">4.0尺</option>
+                                <option value="3">5.0尺</option>
+                                <option value="4">6.0尺</option>
+                                <option value="5">7.0尺</option>
+                                <option value="6">8.0尺</option>
+                                <option value="7">8.5尺</option>
+                                <option value="8">9.0尺</option>
+                                <option value="9">9.5尺</option>
                             </select>
                         </div>
                         <i class="fa fa-times" style="font-size: 20px;line-height: 2.2rem" onclick="delShoeboxInput(1)"></i>
@@ -78,9 +79,9 @@
             '                            <input type="text" class="form-control" placeholder="输入寬度" oninput = "value=value.replace(/[^\\d.]/g,\'\')" id="shoebox_width_'+num+'">\n' +
             '                            <div class="input-group-append">\n' +
             '                                <select class="form-control" style="height: 2.2rem !important;" id="shoebox_select_width_'+num+'">\n' +
-            '                                    <option value="4"  selected>/呎</option>\n' +
-            '                                    <option value="3">/英吋</option>\n' +
-            '                                    <option value="2">/釐米</option>\n' +
+            '                                    <option value="4"  selected>/尺</option>\n' +
+            '                                    <option value="3">/寸</option>\n' +
+            '                                    <option value="2">/厘米</option>\n' +
             '                                    <option value="1">/毫米</option>\n' +
             '                                </select>\n' +
             '                            </div>\n' +
@@ -94,13 +95,13 @@
             '                            </label>\n' +
             '                            <div class="input-group-append">\n' +
             '                                <select class="form-control" style="height: 2.2rem !important;" id="shoebox_select_depth_'+num+'">\n' +
-            '                                    <option value="1" selected>14英吋/350mm/35cm/1.05呎</option>\n' +
-            '                                    <option value="2">16英吋/400mm/40cm/1.2呎</option>\n' +
-            '                                    <option value="3">18英吋/450mm/45cm/1.35呎</option>\n' +
-            '                                    <option value="4">20英吋/500mm/50cm/1.5呎</option>\n' +
-            '                                    <option value="5">22英吋/550mm/55cm/1.65呎</option>\n' +
-            '                                    <option value="6">24英吋/600mm/60cm/1.8呎</option>\n' +
-            '                                    <option value="7">26英吋/650mm/65cm/1.95呎</option>\n' +
+            '                                    <option value="1" selected>14寸/350mm/35cm/1.05尺</option>\n' +
+            '                                    <option value="2">16寸/400mm/40cm/1.2尺</option>\n' +
+            '                                    <option value="3">18寸/450mm/45cm/1.35尺</option>\n' +
+            '                                    <option value="4">20寸/500mm/50cm/1.5尺</option>\n' +
+            '                                    <option value="5">22寸/550mm/55cm/1.65尺</option>\n' +
+            '                                    <option value="6">24寸/600mm/60cm/1.8尺</option>\n' +
+            '                                    <option value="7">26寸/650mm/65cm/1.95尺</option>\n' +
             '                                </select>\n' +
             '                            </div>\n' +
             '                        </div>\n' +
@@ -112,15 +113,15 @@
             '                                </font>\n' +
             '                            </label>\n' +
             '                            <select class="form-control m-b" style="height: 2.2rem !important;" id="shoebox_high_'+num+'">\n' +
-            '                                <option value="1">3.0呎</option>\n' +
-            '                                <option value="2">4.0呎</option>\n' +
-            '                                <option value="3">5.0呎</option>\n' +
-            '                                <option value="4">6.0呎</option>\n' +
-            '                                <option value="5">7.0呎</option>\n' +
-            '                                <option value="6">8.0呎</option>\n' +
-            '                                <option value="7">8.5呎</option>\n' +
-            '                                <option value="8">9.0呎</option>\n' +
-            '                                <option value="9">9.5呎</option>\n' +
+            '                                <option value="1">3.0尺</option>\n' +
+            '                                <option value="2">4.0尺</option>\n' +
+            '                                <option value="3">5.0尺</option>\n' +
+            '                                <option value="4">6.0尺</option>\n' +
+            '                                <option value="5">7.0尺</option>\n' +
+            '                                <option value="6">8.0尺</option>\n' +
+            '                                <option value="7">8.5尺</option>\n' +
+            '                                <option value="8">9.0尺</option>\n' +
+            '                                <option value="9">9.5尺</option>\n' +
             '                            </select>\n' +
             '                        </div>\n' +
             '                        <i class="fa fa-times" style="font-size: 20px;line-height: 2.2rem" onclick="delShoeboxInput('+num+')"></i>\n' +
@@ -161,31 +162,31 @@
     function getHighNum(h) {
         switch (h) {
             case '1':
-                return '3.0呎';
+                return '3.0尺';
                 break;
             case '2':
-                return '4.0呎';
+                return '4.0尺';
                 break;
             case '3':
-                return '5.0呎';
+                return '5.0尺';
                 break;
             case '4':
-                return '6.0呎';
+                return '6.0尺';
                 break;
             case '5':
-                return '7.0呎';
+                return '7.0尺';
                 break;
             case '6':
-                return '8.0呎';
+                return '8.0尺';
                 break;
             case '7':
-                return '8.5呎';
+                return '8.5尺';
                 break;
             case '8':
-                return '9.0呎';
+                return '9.0尺';
                 break;
             case '9':
-                return '9.5呎';
+                return '9.5尺';
                 break;
         }
     }
@@ -194,25 +195,25 @@
     function getShoeboxDepth(s) {
         switch (s) {
             case '1':
-                return '14英吋350mm';
+                return '350mm';
                 break;
             case '2':
-                return '16英吋400mm';
+                return '400mm';
                 break;
             case '3':
-                return '18英吋450mm';
+                return '450mm';
                 break;
             case '4':
-                return '20英吋500mm';
+                return '500mm';
                 break;
             case '5':
-                return '22英吋550mm';
+                return '550mm';
                 break;
             case '6':
-                return '24英吋600mm';
+                return '600mm';
                 break;
             case '7':
-                return '26英吋650mm';
+                return '650mm';
                 break;
         }
     }
@@ -250,7 +251,7 @@
                 }
                 if (Number(w)> 0) {
                     let price_money = Math.round(long * price);
-                    let str = '<p>鞋柜:寬' + w + getUnit(unit) + ';高' + getHighNum(unit1) +';深度' + getShoeboxDepth(h) + ';(' + long + '呎 X ' + price + '/每呎 = ' + price_money+ ')<\p>';
+                    let str = '<p>鞋柜:長' + Math.round(long) + '尺 * 單價' + Math.round(price) + ' = ' + Math.round(price_money) + '港幣左右(高度'+ getHighNum(unit1) +'內,深度'+ getShoeboxDepth(h) +')<\p>';
                     html += str + '\n';
                     let m = $("shoebox_price").val();
                     $("shoebox_price").val(Number(m)+Number(price_money));

@@ -29,7 +29,7 @@
                 <button class="btn btn-primary " type="button" style="position: absolute;right: 1rem;" onclick="calculate_all();">
                     <i class="fa fa-check"></i>
                     <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">&nbsp;提交</font>
+                        <font style="vertical-align: inherit;">&nbsp;计算价格</font>
                     </font>
                 </button>
                 <ul class="nav nav-tabs">
@@ -119,6 +119,37 @@
             </div>
         </div>
     </div>
+
+    {{/*  活动   */}}
+    <div class="row" style="padding: 2rem 1rem 1rem 1rem;">
+        <div class="col-md-12" style="display: flex">
+            <div class="input-group col-md-3">
+                <label style="padding-top: 7px;">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">优惠活动:&nbsp;&nbsp;&nbsp;</font>
+                    </font>
+                </label>
+                <select class="form-control" id="discount">
+                    <option value="-1">选择优惠</option>
+                    <option value="1">滿2萬91折優惠</option>
+                </select>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
+            <div class="input-group col-md-3">
+                <label style="padding-top: 7px;">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">老客户推荐:&nbsp;&nbsp;&nbsp;</font>
+                    </font>
+                </label>
+                <select class="form-control" id="recommend">
+                    <option value="-1">选择优惠</option>
+                    <option value="1">滿1萬减500優惠</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    {{/*  计算结果  */}}
     <div class="row" style="margin-top: 1rem">
         <div class="col-lg-12">
             <div class="jumbotron">
@@ -184,8 +215,21 @@
                 + Number($("#cabinet_price").val())
                 + Number($("#wall_price").val());
 
+            let z_h = Math.round(Number(money));
+
             if (Number(money) > 0) {
                 html += '<p>總價合計='+ Math.round(Number(money)) + '港幣左右</p>';
+            }
+            let discount = $("#discount").val();//活动优惠
+            let recommend = $("#recommend").val();//客户推荐
+
+            if (Number(discount) > 0) {
+                z_h = zhekou(Math.round(Number(money)), discount);
+                html += '<p> 最新活動，'+ $("#discount").text() +'，折後'+ z_h +'港幣左右</p>';
+            }
+
+            if (Number(recommend) > 0) {
+                html += '<p> 老客戶介紹，'+ $("#recommend").text() +'，减後'+ jianhou(z_h, recommend) +'港幣左右</p>';
             }
 
             $("#results").append(html);
@@ -206,6 +250,25 @@
             console.error('Action:', e.action);
             console.error('Trigger:', e.trigger);
         });
+
+        //折扣
+        function zhekou(m, n) {
+            switch (n) {
+                case '1':
+                    return Math.round(Number(m) * 0.91);
+                    break;
+            }
+        }
+        //减后
+        function jianhou(m, n) {
+            switch (n) {
+                case '1':
+                    console.log(m);
+                    return Math.round(Number(m) - 500);
+                break;
+            }
+        }
+
 
     </script>
 
