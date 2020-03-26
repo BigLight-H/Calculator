@@ -122,12 +122,28 @@
     }
 
     function highHight(n) {
-        let num = Number(n);
-        let mm = ((num - 1) * 150) + 1500;
-        let c = ((num - 1) * 0.5) + 5;
-        return c + '尺('+ mm +'mm)';
+        let num = toInt(Number(n));
+        switch (num) {
+            case 159:
+                return '1500mm[5尺]';
+                break;
+            case 174:
+                return '1650mm[5.5尺]';
+                break;
+            case 189:
+                return '1800mm[6尺]';
+                break;
+            case 204:
+                return '1950mm[6.5尺]';
+                break;
+            case 219:
+                return '2100mm[7尺]';
+                break;
+            case 234:
+                return '2250mm[7.5尺]';
+                break;
+        }
     }
-
 
     function highPrice() {
         $("#high_price").val(0);
@@ -147,7 +163,7 @@
                 }
                 if (Number(l)> 0 && Number(w) > 0) {
                     let high_price = (area_high * price).toFixed(2);
-                    let str = '<p>高床:长' + Math.round(long) + '尺 * 寬' + Math.round(width) + '尺 * 單價' + Math.round(price) + ' = ' + Math.round(high_price) + '港幣左右(高度'+ highHight(w) +')<\p>';
+                    let str = '<p>高床:长' + Math.round(long) + '尺 * 寬' + Math.round(width) + '尺 * 單價' + Math.round(price) + ' = ' + Math.round(high_price) + '港幣左右(高度'+ highHight(price) +')<\p>';
                     html += str + '\n';
                     let m = $("#high_price").val();
                     $("#high_price").val(Number(m) + Number(high_price));

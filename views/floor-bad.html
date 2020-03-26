@@ -121,6 +121,10 @@
         }
     }
 
+    function toInt(number) {
+        return number*1 | 0 || 0;
+    }
+
     //获取单位代号名称
     function getUnit(t) {
         switch (t) {
@@ -159,9 +163,36 @@
     }
 
     function floorHight(n) {
-        let num = Number(n);
-        let mm = ((num - 1) * 50) + 400;
-        return mm + 'mm';
+        let num = toInt(Number(n));
+        switch (num) {
+            case 143:
+                return '400mm';
+                break;
+            case 158:
+                return '450mm';
+                break;
+            case 173:
+                return '500mm';
+                break;
+            case 188:
+                return '550mm';
+                break;
+            case 203:
+                return '600mm';
+                break;
+            case 218:
+                return '650mm';
+                break;
+            case 223:
+                return '700mm';
+                break;
+            case 248:
+                return '750mm';
+                break;
+            case 263:
+                return '800mm';
+                break;
+        }
     }
 
     
@@ -183,7 +214,7 @@
                 }
                 if (Number(l)> 0 && Number(w) > 0){
                     let floor_price = (area_floor * price).toFixed(2);
-                    let str = '<p>地台床:長' + Math.round(long)+'尺 * 寬'+ Math.round(width) +'尺 * 單價'+ Math.round(price) +' = '+Math.round(floor_price)+'港幣左右(高度'+ floorHight(w) +')<\p>';
+                    let str = '<p>地台床:長' + Math.round(long)+'尺 * 寬'+ Math.round(width) +'尺 * 單價'+ Math.round(price) +' = '+Math.round(floor_price)+'港幣左右(高度'+ floorHight(price) +')<\p>';
                     html += str+'\n';
                     let m =  $("#floor_price").val();
                     $("#floor_price").val(Number(m)+Number(floor_price));
