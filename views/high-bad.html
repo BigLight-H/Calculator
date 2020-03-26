@@ -121,6 +121,14 @@
         }
     }
 
+    function highHight(n) {
+        let num = Number(n);
+        let mm = ((num - 1) * 150) + 1500;
+        let c = ((num - 1) * 0.5) + 5;
+        return c + '尺('+ mm +'mm)';
+    }
+
+
     function highPrice() {
         $("#high_price").val(0);
         let html = '';
@@ -139,7 +147,7 @@
                 }
                 if (Number(l)> 0 && Number(w) > 0) {
                     let high_price = (area_high * price).toFixed(2);
-                    let str = '<p>高床:长' + Math.round(long) + '尺 * 寬' + Math.round(width) + '尺 * 單價' + Math.round(price) + ' = ' + Math.round(high_price) + '港幣左右<\p>';
+                    let str = '<p>高床:长' + Math.round(long) + '尺 * 寬' + Math.round(width) + '尺 * 單價' + Math.round(price) + ' = ' + Math.round(high_price) + '港幣左右(高度'+ highHight(w) +')<\p>';
                     html += str + '\n';
                     let m = $("#high_price").val();
                     $("#high_price").val(Number(m) + Number(high_price));
